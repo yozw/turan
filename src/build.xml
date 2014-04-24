@@ -1,0 +1,54 @@
+<project name="turan" default="build" basedir=".">
+
+  <taskdef resource="cpptasks.tasks"/>
+  <typedef resource="cpptasks.types"/>
+ 
+  <property name="objdir" location="obj/" />
+  <property name="bindir" location="../bin/" />
+  <property name="debug" value="off" />
+  <property name="optimize" value="speed" />
+
+  <target name="build">
+
+     <mkdir dir="${objdir}"/>
+     <ant dir="DrawingEnum/" />
+
+     <cc name="g++" outfile="${bindir}/toh" debug="${debug}" optimize="${optimize}" objdir="${objdir}">
+         <fileset dir="." includes="toh.cpp"/>
+         <libset libs="stdc++"/>
+     </cc>
+
+     <exec executable="sh">
+         <arg value="-c" />
+         <arg value="${bindir}/toh mexCSinequalityCode &lt; mexCSinequality.c.inc > mexCSinequalityCode.h" />   
+     </exec>
+
+     <exec executable="sh">
+         <arg value="-c" />
+         <arg value="${bindir}/toh mexCSmatrixCode &lt; mexCSmatrix.c.inc > mexCSmatrixCode.h" />   
+     </exec>
+
+     <cc name="g++" outfile="${bindir}/canonical" debug="${debug}" optimize="${optimize}" objdir="${objdir}">
+         <fileset dir="." includes="canonical.cpp, lex_sort.cpp, brickvector.cpp"/>
+         <libset libs="stdc++"/>
+     </cc>
+
+     <cc name="g++" outfile="${bindir}/planardraw" debug="${debug}" optimize="${optimize}" objdir="${objdir}">
+         <fileset dir="." includes="planardraw.cpp"/>
+         <libset libs="stdc++"/>
+     </cc>
+
+     <cc name="g++" outfile="${bindir}/generate" debug="${debug}" optimize="${optimize}" objdir="${objdir}">
+         <fileset dir="." includes="generate.cpp, lex_sort.cpp, brickvector.cpp, configuration.cpp, brickalgebra.cpp, cauchyschwarzmatrix.cpp app_path.cpp"/>
+         <libset libs="stdc++, m"/>
+     </cc>
+
+     <cc name="g++" outfile="${bindir}/flip3x3" debug="${debug}" optimize="${optimize}" objdir="${objdir}">
+         <fileset dir="." includes="flip3x3.cpp, lex_sort.cpp, brickvector.cpp, configuration.cpp, brickalgebra.cpp, cauchyschwarzmatrix.cpp app_path.cpp"/>
+         <libset libs="stdc++, m"/>
+     </cc>
+  </target>
+
+</project>
+
+

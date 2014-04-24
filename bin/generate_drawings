@@ -1,0 +1,8 @@
+#!/bin/bash
+
+P=`dirname $0`
+
+N=$1
+K=$2
+
+$P/drawingenum $N $K -vector | $P/canonical | sort | uniq > dr$N$K.txt

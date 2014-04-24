@@ -1,0 +1,24 @@
+<project name="turan" default="build" basedir=".">
+
+  <taskdef resource="cpptasks.tasks"/>
+  <typedef resource="cpptasks.types"/>
+ 
+  <property name="bindir" location="../bin/" />
+  <property name="srcdir" location="../src/" />
+
+  <target name="build">
+     <copy file="${srcdir}/lp.m" todir="." overwrite="false" />
+     <copy file="${srcdir}/savecertificate.m" todir="." overwrite="false" />
+     <copy file="${srcdir}/checkcertificate.m" todir="." overwrite="false" />
+  </target>
+
+  <target name="generate">
+
+     <exec executable="${bindir}/generate" />
+     <exec executable="./makemex" />
+
+  </target>
+
+</project>
+
+

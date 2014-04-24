@@ -1,0 +1,20 @@
+<project name="turan" default="build" basedir=".">
+
+  <target name="build">
+
+     <ant dir="src/" />
+     <ant dir="3x3/" />
+     <ant dir="3x4/" />
+
+  </target>
+
+  <target name="generate">
+
+     <ant dir="3x3/" target="generate" />
+     <ant dir="3x4/" target="generate" />
+
+  </target>
+
+</project>
+
+

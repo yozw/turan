@@ -1,0 +1,6 @@
+#!/bin/bash
+for mexfile in CS*.c
+do
+	echo Compiling $mexfile ...
+	mex $mexfile
+done
