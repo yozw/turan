@@ -1,6 +1,5 @@
 <project name="turan" default="build" basedir=".">
 
-  
   <taskdef resource="cpptasks.tasks">
     <classpath>
       <pathelement location="cpptasks.jar"/>
@@ -36,11 +35,6 @@
 
      <cc name="g++" outfile="${bindir}/canonical" debug="${debug}" optimize="${optimize}" objdir="${objdir}">
          <fileset dir="." includes="canonical.cpp, lex_sort.cpp, brickvector.cpp"/>
-         <libset libs="stdc++"/>
-     </cc>
-
-     <cc name="g++" outfile="${bindir}/planardraw" debug="${debug}" optimize="${optimize}" objdir="${objdir}">
-         <fileset dir="." includes="planardraw.cpp"/>
          <libset libs="stdc++"/>
      </cc>
 
