@@ -13,7 +13,7 @@ The root directory contains five subdirectories:
 * The code only works on Linux
 * A Java compiler to compile the drawing enumeration code
 * A C++ compiler (e.g. GCC) to compile the flag algebra code
-* Matlab to solve the semidefinite program
+* Matlab with Cplex to solve the semidefinite program
 * Mathematica to verify the correctness of the solution
 
 ### Compiling and running

@@ -1,16 +1,14 @@
 <project name="drawingenum" default="build" basedir=".">
 
   <target name="build">
-
      <mkdir dir="bin"/>
      <mkdir dir="lib"/>
-     <!-- copy file="../YZLib/lib/yzlib.jar" todir="lib/"/-->
 
      <javac srcdir="src/" destdir="bin/" classpath="lib/yzlib.jar" includeAntRuntime="false" debug="off"/>
      <jar destfile="lib/drawingenum.jar" basedir="bin/">
         <manifest>
           <attribute name="Built-By" value="${user.name}"/>
-          <attribute name="Main-Class" value="MainProgram"/>
+          <attribute name="Main-Class" value="yz.drawingenum.DrawingEnum"/>
           <attribute name="Class-Path" value=". yzlib.jar" />
         </manifest>
      </jar>
