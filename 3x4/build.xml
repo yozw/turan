@@ -1,8 +1,5 @@
 <project name="turan" default="build" basedir=".">
 
-  <taskdef resource="cpptasks.tasks"/>
-  <typedef resource="cpptasks.types"/>
- 
   <property name="bindir" location="../bin/" />
   <property name="srcdir" location="../src/" />
 

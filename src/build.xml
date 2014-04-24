@@ -1,6 +1,12 @@
 <project name="turan" default="build" basedir=".">
 
-  <taskdef resource="cpptasks.tasks"/>
+  
+  <taskdef resource="cpptasks.tasks">
+    <classpath>
+      <pathelement location="cpptasks.jar"/>
+    </classpath>
+  </taskdef>
+
   <typedef resource="cpptasks.types"/>
  
   <property name="objdir" location="obj/" />

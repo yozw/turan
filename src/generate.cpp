@@ -274,7 +274,9 @@ int main(int argc, char* argv[]) {
   }
   makemex.close();
 
-  system("chmod +x makemex");
+  if (!system("chmod +x makemex")) {
+    cout << "Warning: failed to chmod makemex to make it executable." << endl;
+  }
 
   /* Write Matlab helper functions */
   writeVariables(variables);
